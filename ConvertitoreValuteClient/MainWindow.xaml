@@ -13,13 +13,13 @@
             <RowDefinition Height="70"/>
         </Grid.RowDefinitions>
         <Label Grid.Row="0" FontSize="30">Convertitore di valute</Label>
-        <TextBox x:Name="tbImporto" Grid.Row="1" Margin="25,100,625,117" RenderTransformOrigin="0.498,0.452"  CharacterCasing="Upper"></TextBox>
-        <ComboBox Margin="204,101,400,117" Grid.Row="1"/>
-        <Label Content="=" Margin="405,61,348,117" FontSize="60" Grid.Row="1"/>
-        <ComboBox Margin="582,102,22,117" Grid.Row="1"/>
-        <Label Content="Risultato" Margin="450,89,206,89" FontSize="30" Grid.Row="1"/>
-        <Label Content="Tasso di cambio = " Grid.Row="2" FontSize="30"></Label>
-        <Button Grid.Row="2" Margin="522,13,169,22">Scambia valute</Button>
-        <Button Grid.Row="2" Margin="656,13,22,22">Calcola</Button>
+        <TextBox x:Name="tbImporto" Grid.Row="1" Margin="10,101,640,116" RenderTransformOrigin="0.498,0.452"  CharacterCasing="Upper" TextChanged="tbImporto_TextChanged"></TextBox>
+        <ComboBox Margin="176,102,428,116" ItemsSource="{Binding lista_Valute}" DisplayMemberPath="Nome" SelectedItem="{Binding Valuta_Selezionata}" Grid.Row="1"/>
+        <Label Content="=" Margin="372,73,381,105" FontSize="60" Grid.Row="1"/>
+        <ComboBox Margin="582,102,22,117" ItemsSource="{Binding lista_Valute}" DisplayMemberPath="Nome" SelectedItem="{Binding Valuta_Selezionata2}" Grid.Row="1"/>
+        <Label Name="lbRisultato" Content="Risultato" Margin="419,101,223,77" FontSize="30" Grid.Row="1"/>
+        <Label Name="lbTasso" Content="Tasso di cambio = " Grid.Row="2" FontSize="10"></Label>
+        <Button Grid.Row="2" Margin="522,13,169,22" Click="Button_Click">Scambia valute</Button>
+        <Button Grid.Row="2" Margin="656,13,22,22" Click="Button_Click_1">Calcola</Button>
     </Grid>
 </Window>
